@@ -1,0 +1,67 @@
+{% extends "basemin.html" %}
+
+        {% block content %}
+        <div class="jumbotron my-2 py-5">
+            <h1 class="display-4 text-center">Wilkommen bei PeakView</h1>
+            <p class="lead text-center">Nicht sicher ob sich die Aussicht auf einem Gipfel wirklich lohnt? Geniesse die Aussicht schon von zu Hause!</p>
+            <hr class="my-4">
+        </div>
+          <h1 class="display-2 my-5 text-success text-center">Was ist Peak View?</h1>
+            <div class="container my-4">
+                <p class="lead">Peak View hat sich das Ziel gesetzt, die Schönheit der Natur auch von zu Hause aus geniessen zu
+                    können. Durch atemberaubende Aufnahmen aus der Luft kannst du sofort abschätzen, ob sich die
+                    Besteigung deines nächsten Berges lohnt oder nicht. Langfristigs soll eine natrubegeisterte
+                    Community entstehen, um möglichst viele Eindrücke der bergreichen schweizer Alpenwelt zu repräsentieren.</p>
+                <div class="row">
+                    <div class="col-xl-3"></div>
+                    <div class="col-xl-6">
+                        <img src="/static/images/mountains/gonzen/Fisheye_webseite.jpg" style="border-radius: 100%" class="img-fluid">
+                    </div>
+                    <div class="col-xl-3"></div>
+                </div>
+            </div>
+
+          <h1 class="display-2 my-5 text-success text-center">Neuste Videos</h1>
+            <div class="container my-4">
+          <div class="row">
+            <div class="col-xl">
+                <p class="h3 text-center text-success" id="title_0"></p>
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe id="youtube_video_0" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-xl">
+                <p class="h3 text-center text-success" id="title_1"></p>
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe id="youtube_video_1" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-xl">
+                <p class="h3 text-center text-success" id="title_2"></p>
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe id="youtube_video_2" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+          </div>
+                <div class="text-center">
+                    <a href="https://www.youtube.com/channel/UCqmDlDTtEC1uq8fyLmPYrEQ/featured" class="btn btn-lg btn-success mt-5" target="_blank">Mehr Videos</a>
+                </div>
+        </div>
+
+        </div>
+        {% endblock %}
+        {% block script %}
+            <script>
+            var channelID = "UCqmDlDTtEC1uq8fyLmPYrEQ";
+            $.getJSON('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.youtube.com%2Ffeeds%2Fvideos.xml%3Fchannel_id%3D'+channelID, function(data) {
+                for(var i = 0; i<3; i++){
+                    var link = data.items[i].link;
+
+                       var id = link.substr(link.indexOf("=")+1);
+                       var title = link.title;
+                        $("#youtube_video_" + i).attr("src","https://youtube.com/embed/"+id + "?controls=0&showinfo=0&rel=0");
+                        $("#title_" + i).text(data.items[i].title);
+                }
+            });
+            </script>
+        {% endblock %}

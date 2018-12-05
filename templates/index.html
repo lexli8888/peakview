@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+        {% block content %}
+        <div class="jumbotron my-2 py-5">
+            <h1 class="display-4 text-center">Wilkommen bei PeakView</h1>
+            <p class="lead text-center">Find hier deine nächste Wanderroute und geniesse bereits jetzt die Aussicht.</p>
+            <hr class="my-4">
+            <form class="form-inline my-2 my-lg-0 text-center">
+                <div class="container">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Wohin willst du?" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Zeige Routendetails</button>
+                </div>
+            </form>
+        </div>
+
+        <h1 class="display-2 my-5 text-success text-center">Was wir bieten</h1>
+
+        <div class="container my-4">
+          <div class="row">
+            <div class="col-sm">
+                <p class="h3 text-center text-success">100% Schweiz</p>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                    sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                    magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                    et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+                    sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                    dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                    At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+                    kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="col-sm">
+                <p class="h3 text-center text-success">Geniess die Aussicht</p>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                        sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                        magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                        et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+                        sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                        dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+                        kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="col-sm">
+                <p class="h3 text-center text-success">GPX Download</p>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                    sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                    magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                    et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+                    sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                    dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                    At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+                    kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            </div>
+          </div>
+          <h1 class="display-2 my-5 text-success text-center">Neuste Videos</h1>
+            <div class="container my-4">
+          <div class="row">
+            <div class="col-xl">
+                <p class="h3 text-center text-success" id="title_0"></p>
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe id="youtube_video_0" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-xl">
+                <p class="h3 text-center text-success" id="title_1"></p>
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe id="youtube_video_1" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-xl">
+                <p class="h3 text-center text-success" id="title_2"></p>
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe id="youtube_video_2" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+          </div>
+        </div>
+
+          <h1 class="display-2 my-5 text-success text-center">Wer wir sind</h1>
+
+          <div class="card-group">
+              <div class="card">
+                  <img class="card-img-top" src="{{ url_for('static', filename='images/Captain-America.jpg') }}" alt="Card image cap">
+                  <div class="card-body">
+                      <h5 class="card-title">Alexander van Schie</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+              </div>
+              <div class="card">
+                  <img class="card-img-top" src="{{ url_for('static', filename='images/Spiderman.jpg') }}" alt="Card image cap">
+                  <div class="card-body">
+                      <h5 class="card-title">Simeon Schlegel</h5>
+                      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+              </div>
+              <div class="card">
+                  <img class="card-img-top" src="{{ url_for('static', filename='images/Batman.jpg') }}" alt="Card image cap">
+                  <div class="card-body">
+                      <h5 class="card-title">Sebastian Müller</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+              </div>
+          </div>
+
+        </div>
+        {% endblock %}
+        {% block script %}
+            <script>
+            var channelID = "UCqmDlDTtEC1uq8fyLmPYrEQ";
+            $.getJSON('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.youtube.com%2Ffeeds%2Fvideos.xml%3Fchannel_id%3D'+channelID, function(data) {
+                for(var i = 0; i<3; i++){
+                    var link = data.items[i].link;
+
+                       var id = link.substr(link.indexOf("=")+1);
+                       var title = link.title;
+                        $("#youtube_video_" + i).attr("src","https://youtube.com/embed/"+id + "?controls=0&showinfo=0&rel=0");
+                        $("#title_" + i).text(data.items[i].title);
+                }
+            });
+            </script>
+        {% endblock %}

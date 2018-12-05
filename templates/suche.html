@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-5">
+    <div class="container py-5">
+        <form class="form-inline">
+            <label class="my-1 mr-2" for="selectKanton">Kanton</label>
+            <select class="custom-select my-1 mr-sm-2" id="selectKanton">
+                <option selected>Wähle...</option>
+                {% for key, kanton in kantone.items() %}
+                <option value="{{ key }}">{{ kanton }}</option>
+                {% endfor %}
+            </select>
+
+            <label class="my-1 mr-2" for="selectHöhe">Minimale Höhe</label>
+            <select class="custom-select my-1 mr-sm-2" id="selectHöhe">
+                {% for i in range(3, 9) %}
+                <option value="{{ i * 500 }}">{{ i * 500 }} Meter</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit" class="btn btn-primary my-1">Suche Berge</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

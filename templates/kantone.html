@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+        {% block content %}
+        <div class="jumbotron my-5 py-5">
+            <h1 class="display-4 text-center">Kantone der Schweiz</h1>
+        </div>
+        <div class="container card-columns">
+            {% for kanton in kantone%}
+            <a href="/kantone/{{ kanton }}">
+                <div class="card">
+                    <img class="card-img-top mx-auto d-block mt-3" src="/static/images/kantons-wappen/{{ kanton|lower }}.png" alt="Card image cap" style="width: 50%;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ kanton }}</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        {% endblock %}
